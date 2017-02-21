@@ -3,5 +3,25 @@
 	"id": "pdbAtomFix",
 	"caption": "Fix PDB atom IDs",
 	"command": "pdbfixatomids"	
+},
+{
+	"id": "pdbMonomer",
+	"caption": "PDB Chain ID monomer",
+	"command": "pdbfixchainidmonomer"	
+},
+{
+	"id": "pdbDimer",
+	"caption": "PDB Chain ID dimer",
+	"command": "pdbfixchainiddimer"	
+},
+{
+	"id": "pdbTrimer",
+	"caption": "PDB Chain ID trimer",
+	"command": "pdbfixchainidtrimer"	
+},
+{
+	"id": "pdbTetramer",
+	"caption": "PDB Chain ID tetramer",
+	"command": "pdbfixchainidtetramer"	
 }
 ]
