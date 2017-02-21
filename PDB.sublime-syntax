@@ -1,0 +1,52 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - pdb
+  - PDB
+scope: source.c
+contexts:
+
+  main:
+    # Less highlighting for everything thats not coordiates/connectivity
+    - match: 'MASTER|END|AUTHOR|OBSLTE|KEYWDS|REVDAT|TITLE|EXPDTA|SPRSDE|SPLT|NUMMDL|JRNL|CAVEAT|MDLTYP|REMARK|COMPND'
+      push: header
+    - match: 'ATOM|HETATM|TER'
+      push: coordinates
+    - match: 'MODEL|ENDMDL|ANISOU'
+      push: model
+      scope: keyword
+    # Less highlighting for secondary strct data
+    - match: 'DBREF|SEQ|MODRES|HET|FORMUL|HELIX|SHEET|SSBOND|LINK|CISPEP|SITE|CRYST|ORIGX|SCALE|MTRIX'
+      push: header
+    # Numbers
+    
+  model:
+    - include: return
+    - include: numbers
+
+  numbers:
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric
+
+  header:
+    - meta_scope: comment
+    - include: return
+
+  coordinates:
+    - match: 'ALA|ARG|ASN|ASP|CYS|GLN|GLU|GLY|HIS|ILE|LEU|LYS|MET|PHE|PRO|SER|THR|TRP|TYR|VAL'
+      scope: entity.name
+    - match: 'HOH|SOL'
+      scope: string
+    - match: ' CL | NA | K '
+      scope: variable.function  
+    - include: numbers
+    - include: return
+    - match: '\b(ATOM|HETATM)\b'
+      scope: keyword.control
+
+  return:
+    - match: "\n"
+      pop: true
+
+  

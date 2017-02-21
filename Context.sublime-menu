@@ -1,0 +1,7 @@
+[
+{
+	"id": "pdbAtomFix",
+	"caption": "Fix PDB atom IDs",
+	"command": "pdbfixatomids"	
+}
+]
