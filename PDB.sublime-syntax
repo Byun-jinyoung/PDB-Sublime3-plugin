@@ -9,11 +9,14 @@ contexts:
 
   main:
     # Less highlighting for everything thats not coordiates/connectivity
-    - match: 'MASTER|END|AUTHOR|OBSLTE|KEYWDS|REVDAT|TITLE|EXPDTA|SPRSDE|SPLT|NUMMDL|JRNL|CAVEAT|MDLTYP|REMARK|COMPND'
+    - match: 'SOURCE|HEADER|MASTER|END|AUTHOR|OBSLTE|KEYWDS|REVDAT|TITLE|EXPDTA|SPRSDE|SPLT|NUMMDL|JRNL|CAVEAT|MDLTYP|REMARK|COMPND'
       push: header
-    - match: 'ATOM|HETATM|TER'
+    - match: 'ATOM|HETATM'
       push: coordinates
-    - match: 'MODEL|ENDMDL|ANISOU'
+    - match: 'TER'
+      push: coordinates
+      scope: keyword
+    - match: 'MODEL|ENDMDL|ANISOU|CONECT'
       push: model
       scope: keyword
     # Less highlighting for secondary strct data

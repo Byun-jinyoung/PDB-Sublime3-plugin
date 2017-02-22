@@ -1,27 +1,41 @@
 [
-{
-	"id": "pdbAtomFix",
-	"caption": "Fix PDB atom IDs",
-	"command": "pdbfixatomids"	
-},
-{
-	"id": "pdbMonomer",
-	"caption": "PDB Chain ID monomer",
-	"command": "pdbfixchainidmonomer"	
-},
-{
-	"id": "pdbDimer",
-	"caption": "PDB Chain ID dimer",
-	"command": "pdbfixchainiddimer"	
-},
-{
-	"id": "pdbTrimer",
-	"caption": "PDB Chain ID trimer",
-	"command": "pdbfixchainidtrimer"	
-},
-{
-	"id": "pdbTetramer",
-	"caption": "PDB Chain ID tetramer",
-	"command": "pdbfixchainidtetramer"	
-}
+  {
+    "id": "PDB",
+    "caption": "PDB",
+    "children": [
+      {
+        "id": "pdbAtomFix",
+        "caption": "Fix Atom IDs",
+        "command": "pdbfixatomids"
+      },
+      {
+        "id": "pdbChainIDFix",
+        "caption": "Fix Chain ID",
+        "command": "pdbfixchainid"
+      },
+      {
+      	"caption": "-", "id": "div"
+      },
+      {
+        "id": "pdbMonomer",
+        "caption": "Chain ID: Make Monomer",
+        "command": "pdbfixchainidmonomer"
+      },
+      {
+        "id": "pdbDimer",
+        "caption": "Chain ID: Make Dimer",
+        "command": "pdbfixchainiddimer"
+      },
+      {
+        "id": "pdbTrimer",
+        "caption": "Chain ID: Make Trimer",
+        "command": "pdbfixchainidtrimer"
+      },
+      {
+        "id": "pdbTetramer",
+        "caption": "Chain ID: Make Tetramer",
+        "command": "pdbfixchainidtetramer"
+      }
+    ]
+  }
 ]
